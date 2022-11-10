@@ -228,6 +228,10 @@
             background-color: #fff;
         }
 
+        .contenedor-skills .skill i{
+           font-size: 25px; 
+        }
+
         /* *********************/
         /* seccion P O R T A F O L I O */
         /* *********************/
