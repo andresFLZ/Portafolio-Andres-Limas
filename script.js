@@ -1,3 +1,24 @@
+const $form = document.querySelector('#form')
+
+$form.addEventListener('submit', handleSubmit);
+
+//Función para el envio del formulario de contacto
+async function handleSubmit(event){
+    event.preventDefault();
+    const form = new FormData(this)
+    const response = await fetch(this.action, {
+        method: this.method,
+        body: form,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    if (response.ok) {
+        this.reset()
+        alert('Tu correo fue enviado, gracias por contactarme.')
+    }
+}
+
 //Función que me aplica el estilo a la opciòn seleccionada y quita la previamente seleccionada
 function seleccionar(link) {
     var opciones = document.querySelectorAll('#links  a');
